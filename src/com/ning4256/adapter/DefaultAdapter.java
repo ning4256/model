@@ -36,10 +36,48 @@ class ItTeacher extends AbsTeacher {
 }
 
 
+
+
+interface Monk {
+	void eatFruit();
+	void sitting();
+	void sleeping();
+}
+
+abstract class AllMonk implements Monk {
+	@Override
+	public void eatFruit() {}
+	@Override
+	public void sitting() {}
+	@Override
+	public void sleeping() {}
+}
+
+class BigMonk extends AllMonk {
+	
+}
+
 public class DefaultAdapter {
 	public static void main(String[] args) {
 		Teacher teacher = new ItTeacher();
 		teacher.teaching();
 		teacher.meeting();
+		
+		Monk monk = new BigMonk();
+		monk.eatFruit();
+		monk.sitting();
+		monk.sleeping();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
